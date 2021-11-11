@@ -35,7 +35,7 @@ public class CustomerController {
     }
 
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Customer> deleteCustomer(@PathVariable int id){
         Customer customer = customerServiceAPI.get(id);
         if (customer != null){
