@@ -34,7 +34,7 @@ public class PetController {
         return new ResponseEntity<Pet>(obj, HttpStatus.CREATED);
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Pet> deleteCustomer(@PathVariable int id){
         Pet pet = petServiceAPI.get(id);
         if (pet != null){

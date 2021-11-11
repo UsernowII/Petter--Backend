@@ -4,21 +4,19 @@ package com.web.petter.model;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
 @ToString
-@Document(collection = "db_pets")
-public class Pet {
+@Document(collection = "db_sales")
+public class salesDetail {
 
-    @Id
+
+    private int quantity;
     private int petId;
-    private String petName;
-    private Long nitProvider;
-    private double buyPrice;
-    private double ivaPrice;
     private double salePrice;
+    private double ivaPrice;
+    private double totalPrice;
 
 }

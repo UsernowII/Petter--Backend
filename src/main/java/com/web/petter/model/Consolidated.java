@@ -9,10 +9,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 @Getter
 @ToString
-@Document(collection ="" )
+@Document(collection ="db_consolidated")
 public class Consolidated {
 
     private int id;
     private String city;
-    private int totalSales;
+    private double totalSales;
 }
