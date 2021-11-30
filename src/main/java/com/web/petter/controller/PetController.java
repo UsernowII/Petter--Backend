@@ -1,6 +1,5 @@
 package com.web.petter.controller;
 
-import com.web.petter.model.Customer;
 import com.web.petter.model.Pet;
 import com.web.petter.service.api.PetServiceAPI;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins="*")
 @RequestMapping("/pet")
 public class PetController {
 

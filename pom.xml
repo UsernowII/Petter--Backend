@@ -11,7 +11,7 @@
     <groupId>com.web</groupId>
     <artifactId>Petter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>Petter</name>
     <description>Sales System Tech Store</description>
     <properties>
