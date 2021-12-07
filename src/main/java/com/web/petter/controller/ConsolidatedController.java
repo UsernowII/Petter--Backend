@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/consolidated")
+@CrossOrigin(origins="*")
 public class ConsolidatedController {
 
     @Autowired

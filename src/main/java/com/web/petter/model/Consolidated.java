@@ -7,6 +7,8 @@ import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigDecimal;
+
 @Setter
 @Getter
 @ToString
@@ -16,5 +18,5 @@ public class Consolidated {
     @Id
     private String _id;
     private String city;
-    private double totalSales;
+    private BigDecimal totalSales;
 }
