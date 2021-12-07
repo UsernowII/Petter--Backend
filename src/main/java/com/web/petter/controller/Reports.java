@@ -49,8 +49,8 @@ public class Reports {
 				sale.setTotalSale(0);
 				map.put(venta.getCustomerId(),  sale);
 			}
-			Salereport clienteventa=map.get(venta.getCustomerId());
-			clienteventa.setTotalSale(clienteventa.getTotalSale()+venta.getTotalSale());
+			Salereport clienteVenta =map.get(venta.getCustomerId());
+			clienteVenta.setTotalSale(clienteVenta.getTotalSale()+venta.getTotalSale());
 		}
 		return new ArrayList<Salereport>(map.values());
     }

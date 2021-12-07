@@ -12,8 +12,6 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-
-
 public class Salereport {
 	
 	private int customerId;
