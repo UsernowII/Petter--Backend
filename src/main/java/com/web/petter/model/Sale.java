@@ -18,7 +18,6 @@ public class Sale {
     private int customerId;
     @Id
     private int saleId;
-    private String city;
     private List<salesDetail> salesDetail;
     private double ivaSale;
     private double totalSaleProduct;

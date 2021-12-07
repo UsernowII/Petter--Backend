@@ -22,9 +22,16 @@ public class SaleController {
 
     @PostMapping("/add")
     public ResponseEntity<Sale> createSale(@RequestBody Sale sale){
-    	Sale maxSale = Collections.max(saleServiceApi.getAll(), Comparator.comparing(c -> c.getSaleId()));
+    	int consec = 0;
+    	List<Sale> ventas = saleServiceApi.getAll();
     	
-    	sale.setSaleId(maxSale.getSaleId() + 1);
+    	if(!ventas.isEmpty()) {
+    		Sale maxSale = Collections.max(ventas, Comparator.comparing(c -> c.getSaleId()));
+    		consec = maxSale.getSaleId();
+    	}
+    	
+    	
+    	sale.setSaleId(consec + 1);
         Sale obj = saleServiceApi.save(sale);
         return new ResponseEntity<Sale>(obj, HttpStatus.CREATED);
 
