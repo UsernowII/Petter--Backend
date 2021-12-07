@@ -31,15 +31,12 @@ public class Reports {
 	    private CustomerServiceAPI  customerserviceapi;
 
 	
-	@GetMapping("{ciudad}/customer/sales")
-    public List<Salereport> getcustomersalereport(@PathVariable String ciudad){
+	@GetMapping("customer/sales")
+    public List<Salereport> getcustomersalereport(){
 		Map<Integer, Salereport> map = new HashMap<Integer, Salereport>();
 		List<Sale> ventas= saleServiceAPI.getAll();
 		for (int i = 0; i< ventas.size();i++) {
 			Sale venta =ventas.get(i);
-			
-			if(!venta.getCity().equals(ciudad))
-				continue;
 			
 			if (!map.containsKey(venta.getCustomerId())) {
 				Customer cliente= customerserviceapi.get(venta.getCustomerId());
