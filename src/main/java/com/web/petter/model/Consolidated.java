@@ -4,6 +4,7 @@ package com.web.petter.model;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Setter
@@ -12,7 +13,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection ="db_consolidated")
 public class Consolidated {
 
-    private int id;
+    @Id
+    private String _id;
     private String city;
     private double totalSales;
 }

@@ -29,13 +29,13 @@ public class ConsolidatedController {
     }
 
     @GetMapping("/find/{id}")
-    public Consolidated readConsolidated(@PathVariable int id){
+    public Consolidated readConsolidated(@PathVariable String id){
         return consolidatedServiceAPI.get(id);
     }
 
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Consolidated> deleteCustomer(@PathVariable int id){
+    public ResponseEntity<Consolidated> deleteCustomer(@PathVariable String id){
         Consolidated consolidated = consolidatedServiceAPI.get(id);
         if (consolidated != null){
             consolidatedServiceAPI.delete(id);

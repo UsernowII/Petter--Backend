@@ -12,13 +12,13 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class ConsolidatedServiceImpl extends GenericServiceImpl<Consolidated, Integer> implements ConsolidatedServiceAPI {
+public class ConsolidatedServiceImpl extends GenericServiceImpl<Consolidated, String> implements ConsolidatedServiceAPI {
 
     @Autowired
     private ConsolidatedRepo consolidatedRepo;
 
     @Override
-    public CrudRepository<Consolidated, Integer> getRepository() {
+    public CrudRepository<Consolidated, String> getRepository() {
         return consolidatedRepo;
     }
 }
