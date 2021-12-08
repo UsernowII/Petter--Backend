@@ -21,7 +21,7 @@ import com.web.petter.service.api.SaleServiceApi;
 @CrossOrigin(origins="*")
 @RequestMapping("/reports")
 
-public class Reports {
+public class ReportsController {
 	 @Autowired
 	    private SaleServiceApi  saleServiceAPI;
 	 @Autowired

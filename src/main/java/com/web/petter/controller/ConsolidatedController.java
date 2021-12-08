@@ -19,6 +19,21 @@ public class ConsolidatedController {
 
     @PostMapping("/add")
     public ResponseEntity<Consolidated> createConsolidated(@RequestBody Consolidated consolidated){
+    	List<Consolidated> consolidados = consolidatedServiceAPI.getAll();
+    	
+    	Consolidated consolidado = null;
+    	for(int cont = 0; cont < consolidados.size(); cont++) {
+    		if (consolidados.get(cont).getCity() == consolidated.getCity()) {
+    			consolidado = consolidados.get(cont);
+    			break;
+    		}
+    	}
+    	
+    	if (consolidado==null)
+    		consolidado = consolidated;
+    	else
+    		consolidado.setTotalSales(consolidated.getTotalSales());
+    	
         Consolidated obj = consolidatedServiceAPI.save(consolidated);
         return new ResponseEntity<Consolidated>(obj, HttpStatus.CREATED);
 
@@ -28,24 +43,6 @@ public class ConsolidatedController {
     public List<Consolidated> readConsolidated(){
         return consolidatedServiceAPI.getAll();
     }
-
-    @GetMapping("/find/{id}")
-    public Consolidated readConsolidated(@PathVariable String id){
-        return consolidatedServiceAPI.get(id);
-    }
-
-
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Consolidated> deleteCustomer(@PathVariable String id){
-        Consolidated consolidated = consolidatedServiceAPI.get(id);
-        if (consolidated != null){
-            consolidatedServiceAPI.delete(id);
-        }else{
-            return new ResponseEntity<Consolidated>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<Consolidated>(consolidated, HttpStatus.OK);
-    }
-
 
 
 }

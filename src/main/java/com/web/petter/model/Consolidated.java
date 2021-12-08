@@ -16,7 +16,6 @@ import java.math.BigDecimal;
 public class Consolidated {
 
     @Id
-    private String _id;
     private String city;
-    private BigDecimal totalSales;
+    private long totalSales;
 }
