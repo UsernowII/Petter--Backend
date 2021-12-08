@@ -8,9 +8,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins="*")
 @RequestMapping("/sales")
 public class SaleController {
 
@@ -19,6 +22,16 @@ public class SaleController {
 
     @PostMapping("/add")
     public ResponseEntity<Sale> createSale(@RequestBody Sale sale){
+    	int consec = 0;
+    	List<Sale> ventas = saleServiceApi.getAll();
+    	
+    	if(!ventas.isEmpty()) {
+    		Sale maxSale = Collections.max(ventas, Comparator.comparing(c -> c.getSaleId()));
+    		consec = maxSale.getSaleId();
+    	}
+    	
+    	
+    	sale.setSaleId(consec + 1);
         Sale obj = saleServiceApi.save(sale);
         return new ResponseEntity<Sale>(obj, HttpStatus.CREATED);
 

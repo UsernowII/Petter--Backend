@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.web.petter.model.UserData;
+
 
 @RestController
 @CrossOrigin(origins="*")
@@ -14,9 +16,29 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthenticationController {
 	 
 	@GetMapping("/validate/{username}/{password}")
-	    public Boolean validateUser(@PathVariable String username,@PathVariable String password){
-	        return username.equals("admininicial") && password.equals("admin123456");
+	public UserData validateUser(@PathVariable String username,@PathVariable String password){
+		
+		UserData user = new UserData();
+		user.setResult(false);
+		
+		if (username.equals("adminbog") && password.equals("123")) {
+			user.setUrl("http://localhost:8080/");
+			user.setCity("Bogota");
+			user.setResult(true);
+		}
+		else if (username.equals("adminmed") && password.equals("123")) {
+			user.setUrl("http://localhost:8080/");
+			user.setCity("Medellin");
+			user.setResult(true);
+		}
+		else if (username.equals("admincal") && password.equals("123")) {
+			user.setUrl("http://localhost:8080/");
+			user.setCity("Cali");
+			user.setResult(true);
+		}
+		
+		return user;
 	        
-	    }
+	}
 
 }

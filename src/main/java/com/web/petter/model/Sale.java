@@ -18,7 +18,7 @@ public class Sale {
     private int customerId;
     @Id
     private int saleId;
-    private List<salesDetail>salesDetail;
+    private List<salesDetail> salesDetail;
     private double ivaSale;
     private double totalSaleProduct;
     private double totalSale;

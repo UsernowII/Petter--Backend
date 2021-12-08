@@ -6,7 +6,7 @@ import com.web.petter.model.Consolidated;
 
 
 
-public interface ConsolidatedServiceAPI extends GenericService <Consolidated, Integer> {
+public interface ConsolidatedServiceAPI extends GenericService <Consolidated, String> {
 
 
 }
