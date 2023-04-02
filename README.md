@@ -1,7 +1,8 @@
-# Petter Backend
-Petter Backend is a sales system built for a pet store that uses ReactJS on the frontend. The application provides a user-friendly interface for managing and processing sales, tracking inventory, and generating sales reports.
+# Petter
 
-The backend of the application is built using NodeJS and the Express framework. It uses a relational database to store and manage product and sales data. The application also includes a user management system with configurable roles and access permissions.
+Petter Backend is a sales system built for a pet store that uses ReactJS on the frontend and Spring Framework on the backend. The application provides a user-friendly interface for managing and processing sales, tracking inventory, and generating sales reports.
+
+The backend of the application is built using Spring Framework, with Java as the programming language. It uses a relational database to store and manage product and sales data. The application also includes a user management system with configurable roles and access permissions.
 
 With Petter Backend, users can add products to their cart, process orders, generate sales invoices, and receive notifications for new orders. The system is designed to be easy to use and customize, with clean and modular code that makes it easy to add new features.
 
